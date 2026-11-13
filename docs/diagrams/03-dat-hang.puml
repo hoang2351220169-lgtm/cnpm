@@ -1,0 +1,53 @@
+@startuml
+title 2.1.3 — Sơ đồ tuần tự đặt hàng
+skinparam BackgroundColor #171815
+skinparam DefaultFontColor #f6f6f2
+skinparam shadowing false
+skinparam sequence {
+    ArrowColor #f6f6f2
+    LifeLineBorderColor #a6a79d
+    LifeLineBackgroundColor #171815
+    ParticipantBorderColor #f6f6f2
+    ParticipantBackgroundColor #171815
+    ActorBorderColor #f6f6f2
+    GroupBorderColor #d7ff3f
+    GroupHeaderBackgroundColor #24251f
+}
+
+actor "Khách hàng đã đăng nhập" as Customer
+boundary "Giỏ hàng / Thanh toán\n(resources/views/cart, checkout)" as UI
+control "Laravel Route\n(routes/web.php)" as Route
+collections "Session\n(cart)" as Session
+database "Cơ sở dữ liệu\n(MySQL — products)" as ProductDB
+database "Cơ sở dữ liệu\n(MySQL — orders, order_items)" as OrderDB
+
+Customer -> UI: 1. Chọn thanh toán
+UI --> Customer: 2. Hiển thị form nhận hàng
+Customer -> UI: 3. Nhập điện thoại, địa chỉ,\nphương thức thanh toán
+Customer -> Route: 4. POST /checkout
+activate Route
+Route -> Route: 5. Validate dữ liệu nhận hàng
+Route -> Session: 6. Đọc giỏ hàng
+Session --> Route: 7. Trả danh sách sản phẩm
+Route -> ProductDB: 8. Kiểm tra sản phẩm và tồn kho
+ProductDB --> Route: 9. Trả số lượng hiện có
+
+alt Giỏ hàng rỗng, thiếu sản phẩm hoặc tồn kho không đủ
+    Route --> UI: 10a. Trả về giỏ hàng cùng thông báo lỗi
+    UI --> Customer: 11a. Yêu cầu kiểm tra lại giỏ hàng
+else Sản phẩm còn đủ
+    group DB::transaction
+        Route -> ProductDB: 10b. Khóa các dòng sản phẩm và kiểm tra lại tồn kho
+        Route -> OrderDB: 11b. INSERT orders gắn với user_id
+        loop Với từng sản phẩm trong giỏ
+            Route -> OrderDB: 12b. INSERT order_items\n(lưu tên, số lượng, giá tại thời điểm mua)
+            Route -> ProductDB: 13b. Trừ số lượng tồn kho
+        end
+        OrderDB --> Route: 14b. Commit transaction
+    end
+    Route -> Session: 15b. Xóa giỏ hàng
+    Route --> UI: 16b. Chuyển tới chi tiết đơn
+    UI --> Customer: 17b. Hiển thị đơn hàng đã đặt
+end
+deactivate Route
+@enduml

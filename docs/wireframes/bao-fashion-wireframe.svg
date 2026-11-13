@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 1600 1180" role="img" aria-labelledby="title description">
+  <title id="title">Bản phác thảo website BAO FASHION</title>
+  <desc id="description">Wireframe trang chủ BAO FASHION và sơ đồ điều hướng khách hàng, đăng nhập, thanh toán và khu vực quản trị.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#77796f"/>
+    </marker>
+    <style>
+      text { font-family: Arial, sans-serif; fill: #171815; }
+      .muted { fill: #77796f; }
+      .light-text { fill: #f6f6f2; }
+      .accent-text { fill: #d7ff3f; }
+      .tiny { font-size: 11px; }
+      .small { font-size: 13px; }
+      .label { font-size: 14px; font-weight: 700; }
+      .heading { font-size: 30px; font-weight: 700; }
+      .box { fill: #fff; stroke: #d7d9d0; stroke-width: 1.5; }
+      .wire { fill: #f0f1eb; stroke: #d7d9d0; stroke-width: 1.2; }
+      .flow { fill: #fff; stroke: #cfd1c7; stroke-width: 1.5; }
+      .flow-admin { fill: #171815; stroke: #171815; stroke-width: 1.5; }
+      .flow-admin-text { fill: #f6f6f2; font-size: 13px; font-weight: 700; }
+      .line { fill: none; stroke: #77796f; stroke-width: 2; marker-end: url(#arrow); }
+      .accent { fill: #d7ff3f; }
+      .outline { fill: none; stroke: #d7ff3f; stroke-width: 2; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1180" fill="#f6f6f2"/>
+  <text x="64" y="58" font-size="12" font-weight="700" letter-spacing="2" fill="#77796f">BAO FASHION · WIREFRAME</text>
+  <text x="64" y="100" class="heading">Phác thảo cấu trúc website</text>
+  <text x="64" y="124" class="small muted">Bố cục trang chủ và luồng thao tác chính của khách hàng, admin.</text>
+
+  <!-- Desktop homepage mockup -->
+  <rect x="64" y="150" width="990" height="820" rx="8" class="box"/>
+  <path d="M64 190H1054" stroke="#d7d9d0"/>
+  <circle cx="87" cy="170" r="5" fill="#d7d9d0"/>
+  <circle cx="105" cy="170" r="5" fill="#d7d9d0"/>
+  <circle cx="123" cy="170" r="5" fill="#d7d9d0"/>
+  <rect x="386" y="158" width="360" height="24" rx="12" fill="#f0f1eb"/>
+  <text x="530" y="175" text-anchor="middle" class="tiny muted">baofashion.vn</text>
+
+  <rect x="84" y="204" width="950" height="52" fill="#fff"/>
+  <text x="102" y="238" font-size="26" font-weight="700">BAO<tspan fill="#8daf00">.</tspan></text>
+  <text x="235" y="236" class="small">Trang chủ</text>
+  <text x="330" y="236" class="small">Cửa hàng</text>
+  <rect x="575" y="216" width="190" height="28" rx="14" class="wire"/>
+  <text x="591" y="234" class="tiny muted">Tìm sản phẩm...</text>
+  <text x="807" y="236" class="small">Giỏ hàng</text>
+  <text x="905" y="236" class="small">Đăng nhập</text>
+  <rect x="84" y="256" width="950" height="1" fill="#e5e6df"/>
+
+  <rect x="84" y="257" width="950" height="310" fill="#282a24"/>
+  <path d="M84 512L272 372L382 465L500 340L706 512Z" fill="#34372d"/>
+  <path d="M386 567L590 397L758 567Z" fill="#3c3f35"/>
+  <text x="128" y="305" class="accent-text" font-size="11" font-weight="700" letter-spacing="2">KHÔNG THEO KHUÔN MẪU · DROP MỚI</text>
+  <text x="128" y="369" class="light-text" font-size="44" font-weight="700">Mặc chất.</text>
+  <text x="128" y="416" class="accent-text" font-size="44" font-weight="700">Sống chất.</text>
+  <text x="128" y="447" class="light-text" font-size="13">Đồ basic có gu, streetwear có chất.</text>
+  <text x="128" y="467" class="light-text" font-size="13">Chọn outfit nói lên đúng con người bạn.</text>
+  <rect x="128" y="488" width="194" height="42" rx="3" class="accent"/>
+  <text x="225" y="514" text-anchor="middle" class="small" font-weight="700">Khám phá bộ sưu tập ↗</text>
+  <text x="845" y="540" class="tiny light-text">VÙNG ẢNH BANNER</text>
+
+  <rect x="84" y="567" width="950" height="76" fill="#fff"/>
+  <path d="M400 579V631M718 579V631" stroke="#e5e6df"/>
+  <text x="112" y="597" class="label">✳ Chất liệu tuyển chọn</text>
+  <text x="112" y="618" class="tiny muted">Thoải mái từ sáng đến tối</text>
+  <text x="430" y="597" class="label">↗ Giao hàng toàn quốc</text>
+  <text x="430" y="618" class="tiny muted">Đơn giản, nhanh chóng</text>
+  <text x="748" y="597" class="label">♡ Mặc theo cách của bạn</text>
+  <text x="748" y="618" class="tiny muted">Không giới hạn phong cách</text>
+
+  <text x="104" y="684" class="tiny" font-weight="700" letter-spacing="1.5" fill="#77796f">PICK CỦA TỤI MÌNH</text>
+  <text x="104" y="714" font-size="25" font-weight="700">Đang được để ý.</text>
+  <text x="850" y="711" class="small" font-weight="700">Xem tất cả sản phẩm ↗</text>
+
+  <g>
+    <rect x="104" y="735" width="285" height="176" class="wire"/>
+    <rect x="104" y="735" width="285" height="121" fill="#e3e5dc"/>
+    <path d="M162 856L228 774L286 856Z" fill="#cfd1c7"/>
+    <text x="122" y="879" class="label">Áo thun BAO</text>
+    <text x="122" y="899" class="small muted">199.000 đ</text>
+    <rect x="306" y="867" width="66" height="28" rx="2" class="accent"/>
+    <text x="339" y="885" text-anchor="middle" class="tiny" font-weight="700">Thêm giỏ</text>
+  </g>
+  <g>
+    <rect x="416" y="735" width="285" height="176" class="wire"/>
+    <rect x="416" y="735" width="285" height="121" fill="#e3e5dc"/>
+    <path d="M474 856L540 774L598 856Z" fill="#cfd1c7"/>
+    <text x="434" y="879" class="label">Quần streetwear</text>
+    <text x="434" y="899" class="small muted">329.000 đ</text>
+    <rect x="618" y="867" width="66" height="28" rx="2" class="accent"/>
+    <text x="651" y="885" text-anchor="middle" class="tiny" font-weight="700">Thêm giỏ</text>
+  </g>
+  <g>
+    <rect x="728" y="735" width="285" height="176" class="wire"/>
+    <rect x="728" y="735" width="285" height="121" fill="#e3e5dc"/>
+    <path d="M786 856L852 774L910 856Z" fill="#cfd1c7"/>
+    <text x="746" y="879" class="label">Áo khoác BAO</text>
+    <text x="746" y="899" class="small muted">459.000 đ</text>
+    <rect x="930" y="867" width="66" height="28" rx="2" class="accent"/>
+    <text x="963" y="885" text-anchor="middle" class="tiny" font-weight="700">Thêm giỏ</text>
+  </g>
+
+  <!-- Navigation map -->
+  <rect x="1080" y="150" width="456" height="820" rx="8" class="box"/>
+  <text x="1110" y="194" class="label">Sơ đồ điều hướng</text>
+  <text x="1110" y="216" class="tiny muted">Luồng màn hình theo chức năng</text>
+
+  <rect x="1195" y="244" width="226" height="44" rx="5" class="flow"/>
+  <text x="1308" y="271" text-anchor="middle" class="small" font-weight="700">Trang chủ</text>
+  <path d="M1308 288V318" class="line"/>
+
+  <rect x="1195" y="322" width="226" height="44" rx="5" class="flow"/>
+  <text x="1308" y="349" text-anchor="middle" class="small" font-weight="700">Cửa hàng / tìm kiếm</text>
+  <path d="M1308 366V396" class="line"/>
+
+  <rect x="1195" y="400" width="226" height="44" rx="5" class="flow"/>
+  <text x="1308" y="427" text-anchor="middle" class="small" font-weight="700">Chi tiết sản phẩm</text>
+  <path d="M1308 444V474" class="line"/>
+
+  <rect x="1195" y="478" width="226" height="44" rx="5" class="flow"/>
+  <text x="1308" y="505" text-anchor="middle" class="small" font-weight="700">Giỏ hàng</text>
+  <path d="M1308 522V552" class="line"/>
+
+  <rect x="1195" y="556" width="226" height="44" rx="5" class="flow"/>
+  <text x="1308" y="583" text-anchor="middle" class="small" font-weight="700">Đăng nhập / đăng ký</text>
+  <path d="M1308 600V630" class="line"/>
+
+  <rect x="1195" y="634" width="226" height="44" rx="5" class="flow"/>
+  <text x="1308" y="661" text-anchor="middle" class="small" font-weight="700">Thanh toán</text>
+  <path d="M1308 678V708" class="line"/>
+
+  <rect x="1195" y="712" width="226" height="44" rx="5" class="flow"/>
+  <text x="1308" y="739" text-anchor="middle" class="small" font-weight="700">Đơn hàng của tôi</text>
+  <text x="1110" y="792" class="tiny" font-weight="700" fill="#77796f">ADMIN · ĐĂNG NHẬP RIÊNG</text>
+  <rect x="1110" y="812" width="180" height="54" rx="5" class="flow-admin"/>
+  <text x="1200" y="834" text-anchor="middle" class="flow-admin-text">Quản lý sản phẩm</text>
+  <text x="1200" y="852" text-anchor="middle" class="accent-text" font-size="10">Thêm · sửa · xóa</text>
+  <rect x="1320" y="812" width="180" height="54" rx="5" class="flow-admin"/>
+  <text x="1410" y="834" text-anchor="middle" class="flow-admin-text">Theo dõi đơn hàng</text>
+  <text x="1410" y="852" text-anchor="middle" class="accent-text" font-size="10">Cập nhật trạng thái</text>
+  <text x="1110" y="905" class="tiny muted">Khách chỉ xem đơn của mình; admin quản lý toàn cửa hàng.</text>
+
+  <!-- Bottom notes -->
+  <rect x="64" y="1000" width="1472" height="124" rx="8" fill="#171815"/>
+  <text x="96" y="1040" class="accent-text" font-size="12" font-weight="700" letter-spacing="1.5">NGUYÊN TẮC THIẾT KẾ</text>
+  <text x="96" y="1072" class="light-text" font-size="14">Điều hướng dễ thấy</text>
+  <text x="96" y="1096" class="light-text" font-size="11">Cửa hàng, tìm kiếm và giỏ hàng nằm ngay trên thanh đầu trang.</text>
+  <path d="M570 1024V1100" stroke="#45473f"/>
+  <text x="610" y="1072" class="light-text" font-size="14">Thao tác mua hàng rõ ràng</text>
+  <text x="610" y="1096" class="light-text" font-size="11">Từ sản phẩm đến giỏ hàng, thanh toán và theo dõi đơn.</text>
+  <path d="M1092 1024V1100" stroke="#45473f"/>
+  <text x="1132" y="1072" class="light-text" font-size="14">Phân quyền riêng biệt</text>
+  <text x="1132" y="1096" class="light-text" font-size="11">Đăng nhập khách và admin có lối vào, quyền hạn khác nhau.</text>
+</svg>

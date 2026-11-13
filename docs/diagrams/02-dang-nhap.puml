@@ -1,0 +1,53 @@
+@startuml
+title 2.1.2 — Sơ đồ tuần tự đăng nhập
+skinparam BackgroundColor #171815
+skinparam DefaultFontColor #f6f6f2
+skinparam shadowing false
+skinparam sequence {
+    ArrowColor #f6f6f2
+    LifeLineBorderColor #a6a79d
+    LifeLineBackgroundColor #171815
+    ParticipantBorderColor #f6f6f2
+    ParticipantBackgroundColor #171815
+    ActorBorderColor #f6f6f2
+    GroupBorderColor #d7ff3f
+    GroupHeaderBackgroundColor #24251f
+}
+
+actor "Người dùng" as User
+boundary "Giao diện đăng nhập\n(auth/login.blade.php hoặc admin-login.blade.php)" as UI
+control "Laravel Route / Auth\n(routes/web.php)" as Auth
+database "Cơ sở dữ liệu\n(MySQL — users)" as DB
+
+User -> UI: 1. Mở /login hoặc /admin/login
+UI --> User: 2. Hiển thị form đúng vai trò
+User -> UI: 3. Nhập email và mật khẩu
+User -> Auth: 4. POST thông tin đăng nhập
+activate Auth
+Auth -> DB: 5. Tìm tài khoản theo email
+DB --> Auth: 6. Trả tài khoản và mật khẩu đã băm
+Auth -> Auth: 7. Auth::attempt và kiểm tra vai trò
+
+alt Khách đăng nhập tại /login
+    alt Thông tin đúng và tài khoản là khách
+        Auth -> Auth: 8a. Tạo lại session
+        Auth --> UI: 9a. Đăng nhập thành công
+        UI --> User: 10a. Chuyển về trang chủ
+    else Sai thông tin hoặc tài khoản là admin
+        Auth -> Auth: 8b. Đăng xuất tài khoản không đúng vai trò
+        Auth --> UI: 9b. Trả thông báo đăng nhập không hợp lệ
+        UI --> User: 10b. Hiển thị lỗi
+    end
+else Admin đăng nhập tại /admin/login
+    alt Thông tin đúng và tài khoản có is_admin = true
+        Auth -> Auth: 8c. Tạo lại session
+        Auth --> UI: 9c. Đăng nhập thành công
+        UI --> User: 10c. Chuyển tới trang quản trị
+    else Sai thông tin hoặc tài khoản là khách
+        Auth -> Auth: 8d. Đăng xuất tài khoản không đúng vai trò
+        Auth --> UI: 9d. Trả thông báo đăng nhập quản trị không hợp lệ
+        UI --> User: 10d. Hiển thị lỗi
+    end
+end
+deactivate Auth
+@enduml

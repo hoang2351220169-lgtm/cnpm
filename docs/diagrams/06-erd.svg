@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="920" viewBox="0 0 1500 920"><defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0 0L10 4L0 8Z" fill="#34434d"/></marker><marker id="redarrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0 0L10 4L0 8Z" fill="#e14d3a"/></marker></defs><rect width="100%" height="100%" fill="white"/>
+<text x="48" y="48" text-anchor="start" font-family="Arial, DejaVu Sans, sans-serif" font-size="26" fill="#17232b" font-weight="bold">2.4 — Sơ đồ quan hệ cơ sở dữ liệu</text>
+<text x="48" y="77" text-anchor="start" font-family="Arial, DejaVu Sans, sans-serif" font-size="15" fill="#64717b" font-weight="normal">MySQL — BAO FASHION</text>
+<path d="M275 365 L275 590" fill="none" stroke="#34434d" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="300" y="475" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="14" fill="#64717b" font-weight="bold">1 : N</text>
+<path d="M945 245 L1030 245" fill="none" stroke="#34434d" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="988" y="225" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="14" fill="#64717b" font-weight="bold">1 : N</text>
+<path d="M470 720 L740 720 L740 730 L1030 730" fill="none" stroke="#34434d" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="750" y="704" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="14" fill="#64717b" font-weight="bold">1 : N</text>
+<path d="M1225 385 L1225 590" fill="none" stroke="#34434d" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="1255" y="490" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="14" fill="#64717b" font-weight="bold">1 : 0..N</text>
+<rect x="80" y="145" width="390" height="220" rx="12" fill="white" stroke="#17232b" stroke-width="2"/>
+<path d="M92 145 H458 Q470 145 470 157 V200 H80 V157 Q80 145 92 145" fill="#d8ff4f"/>
+<text x="275.0" y="181" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="20" fill="#17232b" font-weight="bold">USERS</text>
+<text x="100" y="231" text-anchor="start" font-family="Arial, DejaVu Sans, sans-serif" font-size="16" fill="#17232b" font-weight="normal">PK id</text>
+<text x="100" y="263" text-anchor="start" font-family="Arial, DejaVu Sans, sans-serif" font-size="16" fill="#17232b" font-weight="normal">name, email (UNIQUE)</text>
+<text x="100" y="295" text-anchor="start" font-family="Arial, DejaVu Sans, sans-serif" font-size="16" fill="#17232b" font-weight="normal">password (hashed)</text>
+<text x="100" y="327" text-anchor="start" font-family="Arial, DejaVu Sans, sans-serif" font-size="16" fill="#17232b" font-weight="normal">is_admin, timestamps</text>
+<rect x="555" y="145" width="390" height="190" rx="12" fill="white" stroke="#17232b" stroke-width="2"/>
+<path d="M567 145 H933 Q945 145 945 157 V200 H555 V157 Q555 145 567 145" fill="#d8ff4f"/>
+<text x="750.0" y="181" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="20" fill="#17232b" font-weight="bold">CATEGORIES</text>
+<text x="575" y="231" text-anchor="start" font-family="Arial, DejaVu Sans, sans-serif" font-size="16" fill="#17232b" font-weight="normal">PK id</text>
+<text x="575" y="263" text-anchor="start" font-family="Arial, DejaVu Sans, sans-serif" font-size="16" fill="#17232b" font-weight="normal">name, description</text>
+<text x="575" y="295" text-anchor="start" font-family="Arial, DejaVu Sans, sans-serif" font-size="16" fill="#17232b" font-weight="normal">timestamps</text>
+<rect x="1030" y="145" width="390" height="240" rx="12" fill="white" stroke="#17232b" stroke-width="2"/>
+<path d="M1042 145 H1408 Q1420 145 1420 157 V200 H1030 V157 Q1030 145 1042 145" fill="#d8ff4f"/>
+<text x="1225.0" y="181" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="20" fill="#17232b" font-weight="bold">PRODUCTS</text>
+<text x="1050" y="231" text-anchor="start" font-family="Arial, DejaVu Sans, sans-serif" font-size="16" fill="#17232b" font-weight="normal">PK id</text>
+<text x="1050" y="263" text-anchor="start" font-family="Arial, DejaVu Sans, sans-serif" font-size="16" fill="#17232b" font-weight="normal">FK category_id</text>
+<text x="1050" y="295" text-anchor="start" font-family="Arial, DejaVu Sans, sans-serif" font-size="16" fill="#17232b" font-weight="normal">name, description</text>
+<text x="1050" y="327" text-anchor="start" font-family="Arial, DejaVu Sans, sans-serif" font-size="16" fill="#17232b" font-weight="normal">price, image, quantity</text>
+<rect x="80" y="590" width="390" height="260" rx="12" fill="white" stroke="#17232b" stroke-width="2"/>
+<path d="M92 590 H458 Q470 590 470 602 V645 H80 V602 Q80 590 92 590" fill="#d8ff4f"/>
+<text x="275.0" y="626" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="20" fill="#17232b" font-weight="bold">ORDERS</text>
+<text x="100" y="676" text-anchor="start" font-family="Arial, DejaVu Sans, sans-serif" font-size="16" fill="#17232b" font-weight="normal">PK id</text>
+<text x="100" y="708" text-anchor="start" font-family="Arial, DejaVu Sans, sans-serif" font-size="16" fill="#17232b" font-weight="normal">FK user_id</text>
+<text x="100" y="740" text-anchor="start" font-family="Arial, DejaVu Sans, sans-serif" font-size="16" fill="#17232b" font-weight="normal">total, status</text>
+<text x="100" y="772" text-anchor="start" font-family="Arial, DejaVu Sans, sans-serif" font-size="16" fill="#17232b" font-weight="normal">payment_method</text>
+<text x="100" y="804" text-anchor="start" font-family="Arial, DejaVu Sans, sans-serif" font-size="16" fill="#17232b" font-weight="normal">phone, address</text>
+<rect x="1030" y="590" width="390" height="280" rx="12" fill="white" stroke="#17232b" stroke-width="2"/>
+<path d="M1042 590 H1408 Q1420 590 1420 602 V645 H1030 V602 Q1030 590 1042 590" fill="#d8ff4f"/>
+<text x="1225.0" y="626" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="20" fill="#17232b" font-weight="bold">ORDER_ITEMS</text>
+<text x="1050" y="676" text-anchor="start" font-family="Arial, DejaVu Sans, sans-serif" font-size="16" fill="#17232b" font-weight="normal">PK id</text>
+<text x="1050" y="708" text-anchor="start" font-family="Arial, DejaVu Sans, sans-serif" font-size="16" fill="#17232b" font-weight="normal">FK order_id</text>
+<text x="1050" y="740" text-anchor="start" font-family="Arial, DejaVu Sans, sans-serif" font-size="16" fill="#17232b" font-weight="normal">FK product_id (nullable)</text>
+<text x="1050" y="772" text-anchor="start" font-family="Arial, DejaVu Sans, sans-serif" font-size="16" fill="#17232b" font-weight="normal">product_name (snapshot)</text>
+<text x="1050" y="804" text-anchor="start" font-family="Arial, DejaVu Sans, sans-serif" font-size="16" fill="#17232b" font-weight="normal">quantity, price</text>
+<text x="80" y="890" text-anchor="start" font-family="Arial, DejaVu Sans, sans-serif" font-size="15" fill="#64717b" font-weight="normal">Một danh mục có nhiều sản phẩm; một khách có nhiều đơn; một đơn có nhiều dòng chi tiết.</text>
+</svg>

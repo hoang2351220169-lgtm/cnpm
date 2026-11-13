@@ -1,0 +1,46 @@
+@startuml
+title 2.1.1 — Sơ đồ tuần tự đăng ký
+skinparam BackgroundColor #171815
+skinparam DefaultFontColor #f6f6f2
+skinparam shadowing false
+skinparam sequence {
+    ArrowColor #f6f6f2
+    LifeLineBorderColor #a6a79d
+    LifeLineBackgroundColor #171815
+    ParticipantBorderColor #f6f6f2
+    ParticipantBackgroundColor #171815
+    ActorBorderColor #f6f6f2
+    GroupBorderColor #d7ff3f
+    GroupHeaderBackgroundColor #24251f
+}
+
+actor "Khách hàng" as Customer
+boundary "Giao diện đăng ký\n(resources/views/auth/register.blade.php)" as UI
+control "Laravel Route\n(routes/web.php)" as Route
+control "Validate / Hash" as Security
+entity "User Model" as User
+database "Cơ sở dữ liệu\n(MySQL — users)" as DB
+
+Customer -> UI: 1. Mở trang đăng ký
+UI --> Customer: 2. Hiển thị form đăng ký
+Customer -> UI: 3. Nhập họ tên, email,\nmật khẩu và xác nhận
+Customer -> Route: 4. POST /register
+activate Route
+Route -> Security: 5. Kiểm tra dữ liệu,\nemail duy nhất, mật khẩu xác nhận
+
+alt Dữ liệu không hợp lệ
+    Security --> Route: 6a. Trả lỗi kiểm tra
+    Route --> UI: 7a. Trả về form cùng thông báo lỗi
+    UI --> Customer: 8a. Hiển thị lỗi để nhập lại
+else Dữ liệu hợp lệ
+    Security --> Route: 6b. Dữ liệu hợp lệ
+    Route -> Security: 7b. Băm mật khẩu
+    Route -> User: 8b. Tạo tài khoản khách
+    User -> DB: 9b. INSERT users
+    DB --> User: 10b. Tài khoản đã lưu
+    User --> Route: 11b. Trả tài khoản mới
+    Route -> Route: 12b. Đăng nhập và tạo session
+    Route --> Customer: 13b. Chuyển về trang chủ
+end
+deactivate Route
+@enduml

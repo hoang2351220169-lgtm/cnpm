@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1750" height="1823" viewBox="0 0 1750 1823"><defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0 0L10 4L0 8Z" fill="#d7ff3f" /></marker></defs>
+<rect width="100%" height="100%" fill="#171815" />
+<text x="52" y="52" text-anchor="start" font-family="Arial, DejaVu Sans, sans-serif" font-size="26" fill="#f6f6f2" font-weight="bold">2.1.2 ? ??NG NH?P KH?CH H?NG / ADMIN</text>
+<text x="52" y="82" text-anchor="start" font-family="Arial, DejaVu Sans, sans-serif" font-size="13" fill="#d7ff3f" font-weight="bold">BAO FASHION  /  UML SEQUENCE DIAGRAM</text>
+<circle cx="125.0" cy="124" r="10" fill="none" stroke="#f6f6f2" stroke-width="2.5" />
+<line x1="125.0" y1="134" x2="125.0" y2="166" stroke="#f6f6f2" stroke-width="2.5" />
+<line x1="108.0" y1="145" x2="142.0" y2="145" stroke="#f6f6f2" stroke-width="2.5" />
+<line x1="125.0" y1="166" x2="109.0" y2="188" stroke="#f6f6f2" stroke-width="2.5" />
+<line x1="125.0" y1="166" x2="141.0" y2="188" stroke="#f6f6f2" stroke-width="2.5" />
+<text x="125.0" y="212" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="16" fill="#f6f6f2" font-weight="normal">Ng??i d?ng</text>
+<rect x="315.0" y="112" width="220" height="64" rx="2" fill="#171815" stroke="#f6f6f2" stroke-width="2.2" />
+<text x="425.0" y="139" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="15" fill="#f6f6f2" font-weight="normal">Giao di?n ??ng</text>
+<text x="425.0" y="159" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="15" fill="#f6f6f2" font-weight="normal">nh?p login.blade.php</text>
+<rect x="615.0" y="112" width="220" height="64" rx="2" fill="#171815" stroke="#f6f6f2" stroke-width="2.2" />
+<text x="725.0" y="139" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="15" fill="#f6f6f2" font-weight="normal">Laravel Route /</text>
+<text x="725.0" y="159" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="15" fill="#f6f6f2" font-weight="normal">Auth web.php</text>
+<rect x="915.0" y="112" width="220" height="56" rx="2" fill="#171815" stroke="#f6f6f2" stroke-width="2.2" />
+<text x="1025.0" y="139" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="15" fill="#f6f6f2" font-weight="normal">MySQL users</text>
+<rect x="1215.0" y="112" width="220" height="56" rx="2" fill="#171815" stroke="#f6f6f2" stroke-width="2.2" />
+<text x="1325.0" y="139" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="15" fill="#f6f6f2" font-weight="normal">Middleware admin</text>
+<rect x="1515.0" y="112" width="220" height="56" rx="2" fill="#171815" stroke="#f6f6f2" stroke-width="2.2" />
+<text x="1625.0" y="139" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="15" fill="#f6f6f2" font-weight="normal">Trang ??ch</text>
+<line x1="125.0" y1="218" x2="125.0" y2="1795" stroke="#a6a79d" stroke-width="1.7" stroke-dasharray="7 7" />
+<line x1="425.0" y1="176" x2="425.0" y2="1795" stroke="#a6a79d" stroke-width="1.7" stroke-dasharray="7 7" />
+<line x1="725.0" y1="176" x2="725.0" y2="1795" stroke="#a6a79d" stroke-width="1.7" stroke-dasharray="7 7" />
+<line x1="1025.0" y1="168" x2="1025.0" y2="1795" stroke="#a6a79d" stroke-width="1.7" stroke-dasharray="7 7" />
+<line x1="1325.0" y1="168" x2="1325.0" y2="1795" stroke="#a6a79d" stroke-width="1.7" stroke-dasharray="7 7" />
+<line x1="1625.0" y1="168" x2="1625.0" y2="1795" stroke="#a6a79d" stroke-width="1.7" stroke-dasharray="7 7" />
+<rect x="720.0" y="420" width="10" height="1140" fill="#d7ff3f" stroke="#f6f6f2" stroke-width="1.5" /><rect x="1020.0" y="480" width="10" height="130" fill="#d7ff3f" stroke="#f6f6f2" stroke-width="1.5" /><rect x="1320.0" y="500" width="10" height="1000" fill="#d7ff3f" stroke="#f6f6f2" stroke-width="1.5" /><line x1="125.0" y1="260" x2="425.0" y2="260" stroke="#f6f6f2" stroke-width="2.2" marker-end="url(#arrow)" />
+<text x="275.0" y="250" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="15" fill="#f6f6f2" font-weight="normal">1. M? /login ho?c /admin/login</text>
+<line x1="425.0" y1="322" x2="125.0" y2="322" stroke="#f6f6f2" stroke-width="2.2" stroke-dasharray="8 6" marker-end="url(#arrow)" />
+<text x="275.0" y="312" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="15" fill="#f6f6f2" font-weight="normal">2. Hi?n th? form ??ng nh?p</text>
+<line x1="125.0" y1="384" x2="425.0" y2="384" stroke="#f6f6f2" stroke-width="2.2" marker-end="url(#arrow)" />
+<text x="275.0" y="374" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="15" fill="#f6f6f2" font-weight="normal">3. Nh?p email v? m?t kh?u</text>
+<line x1="425.0" y1="446" x2="725.0" y2="446" stroke="#f6f6f2" stroke-width="2.2" marker-end="url(#arrow)" />
+<text x="575.0" y="436" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="15" fill="#f6f6f2" font-weight="normal">4. POST th?ng tin ??ng nh?p</text>
+<line x1="725.0" y1="508" x2="1025.0" y2="508" stroke="#f6f6f2" stroke-width="2.2" marker-end="url(#arrow)" />
+<text x="875.0" y="498" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="15" fill="#f6f6f2" font-weight="normal">5. T?m t?i kho?n theo email</text>
+<line x1="1025.0" y1="570" x2="725.0" y2="570" stroke="#f6f6f2" stroke-width="2.2" stroke-dasharray="8 6" marker-end="url(#arrow)" />
+<text x="875.0" y="560" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="15" fill="#f6f6f2" font-weight="normal">6. Tr? t?i kho?n v? m?t kh?u ??</text>
+<text x="875.0" y="579" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="15" fill="#f6f6f2" font-weight="normal">b?m</text>
+<path d="M725.0 632 h48 v34 h-44" fill="none" stroke="#f6f6f2" stroke-width="2.4" marker-end="url(#arrow)" />
+<text x="783.0" y="622" text-anchor="start" font-family="Arial, DejaVu Sans, sans-serif" font-size="15" fill="#f6f6f2" font-weight="normal">7. Auth::attempt, ki?m tra</text>
+<text x="783.0" y="641" text-anchor="start" font-family="Arial, DejaVu Sans, sans-serif" font-size="15" fill="#f6f6f2" font-weight="normal">is_admin</text>
+<rect x="52" y="670" width="1646" height="926" fill="none" stroke="#f6f6f2" stroke-width="2" />
+<path d="M52 670 h205 l-20 30 H52Z" fill="#24251f" stroke="#f6f6f2" stroke-width="1.8" />
+<text x="68" y="690" text-anchor="start" font-family="Arial, DejaVu Sans, sans-serif" font-size="14" fill="#d7ff3f" font-weight="bold">alt [Kh?ch: ??ng m?t kh?u, is_admin=false]</text>
+<path d="M725.0 726 h48 v34 h-44" fill="none" stroke="#d7ff3f" stroke-width="2.4" marker-end="url(#arrow)" />
+<text x="783.0" y="716" text-anchor="start" font-family="Arial, DejaVu Sans, sans-serif" font-size="15" fill="#f6f6f2" font-weight="normal">8a. T?o l?i session</text>
+<line x1="725.0" y1="788" x2="1625.0" y2="788" stroke="#d7ff3f" stroke-width="2.2" marker-end="url(#arrow)" />
+<text x="1175.0" y="778" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="15" fill="#f6f6f2" font-weight="normal">9a. Chuy?n v? trang ch?</text>
+<line x1="1625.0" y1="850" x2="125.0" y2="850" stroke="#d7ff3f" stroke-width="2.2" stroke-dasharray="8 6" marker-end="url(#arrow)" />
+<text x="875.0" y="840" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="15" fill="#f6f6f2" font-weight="normal">10a. Hi?n th? trang ch?</text>
+<line x1="52" y1="900" x2="1698" y2="900" stroke="#bfc0b6" stroke-width="1.6" stroke-dasharray="7 5" />
+<path d="M52 888 h205 l-20 30 H52Z" fill="#24251f" stroke="#f6f6f2" stroke-width="1.8" />
+<text x="68" y="908" text-anchor="start" font-family="Arial, DejaVu Sans, sans-serif" font-size="14" fill="#d7ff3f" font-weight="bold">else [Kh?ch: sai m?t kh?u ho?c t?i kho?n admin]</text>
+<path d="M725.0 944 h48 v34 h-44" fill="none" stroke="#d7ff3f" stroke-width="2.4" marker-end="url(#arrow)" />
+<text x="783.0" y="934" text-anchor="start" font-family="Arial, DejaVu Sans, sans-serif" font-size="15" fill="#f6f6f2" font-weight="normal">8b. ??ng xu?t t?i kho?n kh?ng</text>
+<text x="783.0" y="953" text-anchor="start" font-family="Arial, DejaVu Sans, sans-serif" font-size="15" fill="#f6f6f2" font-weight="normal">??ng vai tr?</text>
+<line x1="725.0" y1="1006" x2="425.0" y2="1006" stroke="#d7ff3f" stroke-width="2.2" stroke-dasharray="8 6" marker-end="url(#arrow)" />
+<text x="575.0" y="996" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="15" fill="#f6f6f2" font-weight="normal">9b. Tr? th?ng b?o ??ng nh?p</text>
+<text x="575.0" y="1015" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="15" fill="#f6f6f2" font-weight="normal">kh?ng h?p l?</text>
+<line x1="425.0" y1="1068" x2="125.0" y2="1068" stroke="#d7ff3f" stroke-width="2.2" stroke-dasharray="8 6" marker-end="url(#arrow)" />
+<text x="275.0" y="1058" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="15" fill="#f6f6f2" font-weight="normal">10b. Hi?n th? l?i</text>
+<line x1="52" y1="1118" x2="1698" y2="1118" stroke="#bfc0b6" stroke-width="1.6" stroke-dasharray="7 5" />
+<path d="M52 1106 h205 l-20 30 H52Z" fill="#24251f" stroke="#f6f6f2" stroke-width="1.8" />
+<text x="68" y="1126" text-anchor="start" font-family="Arial, DejaVu Sans, sans-serif" font-size="14" fill="#d7ff3f" font-weight="bold">else [Admin: ??ng m?t kh?u, is_admin=true]</text>
+<path d="M725.0 1162 h48 v34 h-44" fill="none" stroke="#d7ff3f" stroke-width="2.4" marker-end="url(#arrow)" />
+<text x="783.0" y="1152" text-anchor="start" font-family="Arial, DejaVu Sans, sans-serif" font-size="15" fill="#f6f6f2" font-weight="normal">8c. T?o l?i session</text>
+<line x1="725.0" y1="1224" x2="1625.0" y2="1224" stroke="#d7ff3f" stroke-width="2.2" marker-end="url(#arrow)" />
+<text x="1175.0" y="1214" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="15" fill="#f6f6f2" font-weight="normal">9c. Chuy?n t?i trang qu?n tr?</text>
+<line x1="1625.0" y1="1286" x2="125.0" y2="1286" stroke="#d7ff3f" stroke-width="2.2" stroke-dasharray="8 6" marker-end="url(#arrow)" />
+<text x="875.0" y="1276" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="15" fill="#f6f6f2" font-weight="normal">10c. Hi?n th? trang qu?n tr?</text>
+<line x1="52" y1="1336" x2="1698" y2="1336" stroke="#bfc0b6" stroke-width="1.6" stroke-dasharray="7 5" />
+<path d="M52 1324 h205 l-20 30 H52Z" fill="#24251f" stroke="#f6f6f2" stroke-width="1.8" />
+<text x="68" y="1344" text-anchor="start" font-family="Arial, DejaVu Sans, sans-serif" font-size="14" fill="#d7ff3f" font-weight="bold">else [Admin: sai m?t kh?u ho?c t?i kho?n kh?ch]</text>
+<path d="M725.0 1380 h48 v34 h-44" fill="none" stroke="#d7ff3f" stroke-width="2.4" marker-end="url(#arrow)" />
+<text x="783.0" y="1370" text-anchor="start" font-family="Arial, DejaVu Sans, sans-serif" font-size="15" fill="#f6f6f2" font-weight="normal">8d. ??ng xu?t t?i kho?n kh?ng</text>
+<text x="783.0" y="1389" text-anchor="start" font-family="Arial, DejaVu Sans, sans-serif" font-size="15" fill="#f6f6f2" font-weight="normal">??ng vai tr?</text>
+<line x1="725.0" y1="1442" x2="425.0" y2="1442" stroke="#d7ff3f" stroke-width="2.2" stroke-dasharray="8 6" marker-end="url(#arrow)" />
+<text x="575.0" y="1432" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="15" fill="#f6f6f2" font-weight="normal">9d. Tr? th?ng b?o ??ng nh?p</text>
+<text x="575.0" y="1451" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="15" fill="#f6f6f2" font-weight="normal">admin kh?ng h?p l?</text>
+<line x1="425.0" y1="1504" x2="125.0" y2="1504" stroke="#d7ff3f" stroke-width="2.2" stroke-dasharray="8 6" marker-end="url(#arrow)" />
+<text x="275.0" y="1494" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="15" fill="#f6f6f2" font-weight="normal">10d. Hi?n th? l?i</text>
+</svg>

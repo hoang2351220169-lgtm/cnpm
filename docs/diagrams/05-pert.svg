@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="650" viewBox="0 0 1500 650"><defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0 0L10 4L0 8Z" fill="#34434d"/></marker><marker id="redarrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0 0L10 4L0 8Z" fill="#e14d3a"/></marker></defs><rect width="100%" height="100%" fill="white"/>
+<text x="48" y="48" text-anchor="start" font-family="Arial, DejaVu Sans, sans-serif" font-size="26" fill="#17232b" font-weight="bold">2.2 — Biểu đồ PERT</text>
+<text x="48" y="77" text-anchor="start" font-family="Arial, DejaVu Sans, sans-serif" font-size="15" fill="#64717b" font-weight="normal">Thời lượng kỳ vọng: 15 ngày làm việc | Đường găng: A → B → D → E → F → G → H</text>
+<line x1="190" y1="290" x2="230" y2="290" stroke="#e14d3a" stroke-width="4" marker-end="url(#redarrow)"/>
+<line x1="390" y1="290" x2="440" y2="115" stroke="#64717b" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="390" y1="290" x2="440" y2="430" stroke="#e14d3a" stroke-width="4" marker-end="url(#redarrow)"/>
+<line x1="600" y1="115" x2="660" y2="290" stroke="#64717b" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="600" y1="430" x2="660" y2="290" stroke="#e14d3a" stroke-width="4" marker-end="url(#redarrow)"/>
+<line x1="820" y1="290" x2="880" y2="290" stroke="#e14d3a" stroke-width="4" marker-end="url(#redarrow)"/>
+<line x1="1040" y1="290" x2="1090" y2="290" stroke="#e14d3a" stroke-width="4" marker-end="url(#redarrow)"/>
+<line x1="1250" y1="290" x2="1300" y2="290" stroke="#e14d3a" stroke-width="4" marker-end="url(#redarrow)"/>
+<rect x="28" y="242" width="164" height="96" rx="14" fill="#fff4f1" stroke="#e14d3a" stroke-width="3"/>
+<text x="110" y="282" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="14" fill="#17232b" font-weight="bold">A · Khảo sát yêu cầu</text>
+<text x="110" y="310" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="14" fill="#e14d3a" font-weight="bold">2 ngày</text>
+<rect x="228" y="242" width="164" height="96" rx="14" fill="#fff4f1" stroke="#e14d3a" stroke-width="3"/>
+<text x="310" y="282" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="14" fill="#17232b" font-weight="bold">B · Thiết kế CSDL</text>
+<text x="310" y="310" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="14" fill="#e14d3a" font-weight="bold">2 ngày</text>
+<rect x="438" y="67" width="164" height="96" rx="14" fill="#f1f4f6" stroke="#7c8991" stroke-width="2"/>
+<text x="520" y="107" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="14" fill="#17232b" font-weight="bold">C · Đăng ký / đăng nhập</text>
+<text x="520" y="135" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="14" fill="#7c8991" font-weight="bold">2 ngày</text>
+<rect x="438" y="382" width="164" height="96" rx="14" fill="#fff4f1" stroke="#e14d3a" stroke-width="3"/>
+<text x="520" y="422" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="14" fill="#17232b" font-weight="bold">D · Danh mục / sản phẩm</text>
+<text x="520" y="450" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="14" fill="#e14d3a" font-weight="bold">3 ngày</text>
+<rect x="658" y="242" width="164" height="96" rx="14" fill="#fff4f1" stroke="#e14d3a" stroke-width="3"/>
+<text x="740" y="282" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="14" fill="#17232b" font-weight="bold">E · Giỏ hàng / đặt hàng</text>
+<text x="740" y="310" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="14" fill="#e14d3a" font-weight="bold">3 ngày</text>
+<rect x="878" y="242" width="164" height="96" rx="14" fill="#fff4f1" stroke="#e14d3a" stroke-width="3"/>
+<text x="960" y="282" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="14" fill="#17232b" font-weight="bold">F · Phân quyền / đơn hàng</text>
+<text x="960" y="310" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="14" fill="#e14d3a" font-weight="bold">2 ngày</text>
+<rect x="1088" y="242" width="164" height="96" rx="14" fill="#fff4f1" stroke="#e14d3a" stroke-width="3"/>
+<text x="1170" y="282" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="14" fill="#17232b" font-weight="bold">G · Tích hợp / kiểm thử</text>
+<text x="1170" y="310" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="14" fill="#e14d3a" font-weight="bold">2 ngày</text>
+<rect x="1298" y="242" width="164" height="96" rx="14" fill="#fff4f1" stroke="#e14d3a" stroke-width="3"/>
+<text x="1380" y="282" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="14" fill="#17232b" font-weight="bold">H · Demo / báo cáo</text>
+<text x="1380" y="310" text-anchor="middle" font-family="Arial, DejaVu Sans, sans-serif" font-size="14" fill="#e14d3a" font-weight="bold">1 ngày</text>
+<text x="60" y="585" text-anchor="start" font-family="Arial, DejaVu Sans, sans-serif" font-size="15" fill="#64717b" font-weight="normal">Đỏ: công việc găng (dự trữ 0 ngày)   |   Xám: công việc C có dự trữ 1 ngày</text>
+</svg>

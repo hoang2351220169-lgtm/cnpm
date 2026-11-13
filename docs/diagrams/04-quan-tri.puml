@@ -1,0 +1,53 @@
+@startuml
+title 2.1.4 — Sơ đồ tuần tự quản trị sản phẩm và theo dõi đơn
+skinparam BackgroundColor #171815
+skinparam DefaultFontColor #f6f6f2
+skinparam shadowing false
+skinparam sequence {
+    ArrowColor #f6f6f2
+    LifeLineBorderColor #a6a79d
+    LifeLineBackgroundColor #171815
+    ParticipantBorderColor #f6f6f2
+    ParticipantBackgroundColor #171815
+    ActorBorderColor #f6f6f2
+    GroupBorderColor #d7ff3f
+    GroupHeaderBackgroundColor #24251f
+}
+
+actor "Admin" as Admin
+boundary "Giao diện quản trị\n(resources/views/admin)" as UI
+control "Laravel Route / Controller\n(routes/web.php, ProductController)" as Route
+control "Middleware admin" as Middleware
+database "Cơ sở dữ liệu\n(MySQL — products)" as ProductDB
+database "Cơ sở dữ liệu\n(MySQL — orders, users,\norder_items)" as OrderDB
+
+Admin -> UI: 1. Đăng nhập tại /admin/login
+UI -> Route: 2. Gửi email và mật khẩu
+Route -> Middleware: 3. Xác thực tài khoản và is_admin
+Middleware --> Route: 4. Tài khoản admin hợp lệ
+Route --> Admin: 5. Mở khu vực quản trị
+
+alt Quản lý sản phẩm
+    Admin -> UI: 6a. Mở /admin/products
+    UI -> Route: 7a. Xem, thêm, sửa hoặc xóa sản phẩm
+    Route -> Middleware: 8a. Kiểm tra quyền admin
+    Middleware --> Route: 9a. Cho phép
+    activate Route
+    Route -> ProductDB: 10a. Đọc hoặc cập nhật products
+    ProductDB --> Route: 11a. Trả kết quả
+    Route --> UI: 12a. Render danh sách / form / thông báo
+    UI --> Admin: 13a. Hiển thị kết quả quản lý sản phẩm
+    deactivate Route
+else Theo dõi đơn hàng
+    Admin -> UI: 6b. Mở /admin/orders
+    UI -> Route: 7b. Yêu cầu danh sách đơn hàng
+    Route -> Middleware: 8b. Kiểm tra quyền admin
+    Middleware --> Route: 9b. Cho phép
+    activate Route
+    Route -> OrderDB: 10b. Đọc orders cùng users và order_items
+    OrderDB --> Route: 11b. Trả người mua, sản phẩm,\nđịa chỉ, tổng tiền và trạng thái
+    Route --> UI: 12b. Render danh sách đơn
+    UI --> Admin: 13b. Xem thông tin các đơn hàng
+    deactivate Route
+end
+@enduml

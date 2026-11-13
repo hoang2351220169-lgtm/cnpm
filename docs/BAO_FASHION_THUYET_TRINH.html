@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BAO FASHION — Thuyết trình Chương 2</title>
+    <style>
+        :root {
+            color-scheme: dark;
+            --ink: #171815;
+            --panel: #24251f;
+            --paper: #f6f6f2;
+            --muted: #b8baaf;
+            --acid: #d7ff3f;
+            --line: #44463d;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            background: var(--ink);
+            color: var(--paper);
+            font-family: "DM Sans", "Segoe UI", Arial, sans-serif;
+        }
+        button { font: inherit; }
+        .deck { min-height: 100vh; display: grid; place-items: center; padding: 28px 28px 92px; }
+        .slide {
+            display: none;
+            width: min(1200px, 100%);
+            min-height: min(675px, calc(100vh - 130px));
+            padding: clamp(30px, 5vw, 72px);
+            border: 1px solid var(--line);
+            background:
+                radial-gradient(ellipse at 92% 8%, rgba(215,255,63,.10), transparent 30%),
+                var(--ink);
+            position: relative;
+            overflow: hidden;
+        }
+        .slide.active { display: flex; flex-direction: column; animation: appear .22s ease-out; }
+        @keyframes appear { from { opacity: .5; transform: translateY(5px); } to { opacity: 1; transform: none; } }
+        .kicker { color: var(--acid); text-transform: uppercase; letter-spacing: .18em; font-weight: 800; font-size: 12px; }
+        h1, h2 { font-family: "Space Grotesk", "Segoe UI", Arial, sans-serif; line-height: 1.05; margin: 18px 0; }
+        h1 { font-size: clamp(48px, 8vw, 96px); letter-spacing: -.06em; max-width: 900px; }
+        h1 span { color: var(--acid); }
+        h2 { font-size: clamp(34px, 5vw, 58px); letter-spacing: -.045em; }
+        h3 { margin: 0 0 8px; color: var(--acid); font-size: 18px; }
+        p, li { font-size: clamp(17px, 2vw, 22px); line-height: 1.55; }
+        .lead { max-width: 800px; color: var(--muted); font-size: clamp(20px, 2.5vw, 28px); }
+        .accent { color: var(--acid); }
+        .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 20px; }
+        .card { padding: 20px 22px; background: var(--panel); border: 1px solid var(--line); }
+        .card p, .card li { margin: 7px 0 0; color: var(--muted); font-size: clamp(15px, 1.5vw, 19px); }
+        .tech-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 30px; padding: 0; list-style: none; }
+        .tech-list li { border-bottom: 1px solid var(--line); padding: 12px 0; }
+        .tech-list strong { color: var(--acid); }
+        .diagram { flex: 1; min-height: 0; display: grid; place-items: center; margin: 8px 0; background: #10110f; border: 1px solid var(--line); }
+        .diagram img { display: block; max-width: 100%; max-height: 430px; width: auto; height: auto; }
+        .diagram.wide img { width: 100%; max-height: 460px; object-fit: contain; }
+        .explain { margin: 10px 0 0; color: var(--muted); font-size: clamp(15px, 1.6vw, 19px); }
+        .path { padding: 18px 22px; margin: 14px 0; background: var(--panel); border-left: 5px solid var(--acid); font-size: clamp(19px, 2.4vw, 28px); font-weight: 800; }
+        .steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin: 14px 0; }
+        .step { padding: 14px; min-height: 105px; background: var(--panel); border-top: 3px solid var(--acid); }
+        .step b { display: block; color: var(--acid); margin-bottom: 7px; }
+        .step span { color: var(--muted); font-size: 15px; line-height: 1.35; }
+        table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: clamp(13px, 1.3vw, 17px); }
+        th, td { padding: 10px 12px; border-bottom: 1px solid var(--line); text-align: left; }
+        th { color: var(--acid); font-weight: 800; }
+        td { color: var(--muted); }
+        .note { margin-top: auto; padding: 13px 16px; border: 1px dashed #73766a; color: var(--muted); font-size: 15px; line-height: 1.45; }
+        .note b { color: var(--acid); }
+        .controls {
+            position: fixed; z-index: 5; bottom: 0; left: 0; right: 0;
+            display: flex; align-items: center; justify-content: center; gap: 14px;
+            padding: 14px 18px; background: rgba(23,24,21,.94); border-top: 1px solid var(--line);
+        }
+        .controls button {
+            padding: 9px 16px; color: var(--paper); background: var(--panel);
+            border: 1px solid var(--line); cursor: pointer;
+        }
+        .controls button:hover { color: var(--ink); background: var(--acid); }
+        #counter { min-width: 78px; color: var(--muted); text-align: center; font-variant-numeric: tabular-nums; }
+        .progress { position: fixed; z-index: 6; left: 0; bottom: 0; height: 3px; background: var(--acid); transition: width .2s; }
+        .small { color: var(--muted); font-size: 14px; }
+        @media (max-width: 700px) {
+            .deck { padding: 12px 12px 82px; }
+            .slide { min-height: calc(100vh - 100px); padding: 25px 20px; }
+            .grid, .tech-list { grid-template-columns: 1fr; }
+            .steps { grid-template-columns: 1fr 1fr; }
+            .step { min-height: auto; }
+            .diagram img { max-height: 320px; }
+            table { font-size: 12px; }
+            th, td { padding: 7px 5px; }
+        }
+        @media print {
+            :root { color-scheme: light; }
+            body { background: white; color: #171815; }
+            .deck { display: block; padding: 0; }
+            .slide, .slide.active {
+                display: flex !important; width: 100%; height: 100vh; min-height: 0;
+                page-break-after: always; border: 0; padding: 35px; background: white; color: #171815;
+                -webkit-print-color-adjust: exact; print-color-adjust: exact;
+            }
+            .controls, .progress { display: none !important; }
+            .diagram { background: #171815; }
+            .note { color: #333; }
+        }
+    </style>
+</head>
+<body>
+<main class="deck" aria-live="polite">
+    <section class="slide active">
+        <p class="kicker">Báo cáo dự án · Chương 2</p>
+        <h1>BAO<br><span>FASHION.</span></h1>
+        <p class="lead">Website bán hàng thời trang — thực nghiệm chức năng, thiết kế dữ liệu và kiểm thử.</p>
+        <div class="path">Mặc chất. Sống chất.</div>
+        <aside class="note"><b>Lời dẫn:</b> Em xin trình bày dự án BAO FASHION, một website bán hàng thời trang xây dựng bằng Laravel. Nội dung tập trung vào công nghệ, các luồng nghiệp vụ chính, cơ sở dữ liệu và kết quả kiểm thử.</aside>
+    </section>
+
+    <section class="slide">
+        <p class="kicker">01 · Công nghệ</p>
+        <h2>Công cụ &amp; nền tảng</h2>
+        <ul class="tech-list">
+            <li><strong>Laravel 9</strong><br>Framework xử lý route, nghiệp vụ và giao diện.</li>
+            <li><strong>PHP 8</strong><br>Ngôn ngữ phía máy chủ.</li>
+            <li><strong>Blade, HTML, CSS, JavaScript</strong><br>Xây dựng giao diện website.</li>
+            <li><strong>MySQL</strong><br>Lưu người dùng, sản phẩm và đơn hàng.</li>
+            <li><strong>Vite 4 + npm</strong><br>Build CSS và JavaScript.</li>
+            <li><strong>Composer</strong><br>Quản lý thư viện PHP.</li>
+            <li><strong>VS Code</strong><br>Soạn thảo và phát triển mã nguồn.</li>
+            <li><strong>MySQL Workbench</strong><br>Kiểm tra schema và dữ liệu.</li>
+        </ul>
+        <aside class="note"><b>Lời dẫn:</b> Laravel là framework chính. PHP xử lý nghiệp vụ; Blade kết hợp HTML, CSS và JavaScript tạo giao diện; MySQL lưu dữ liệu. Composer và npm quản lý các thư viện tương ứng.</aside>
+    </section>
+
+    <section class="slide">
+        <p class="kicker">02 · Chức năng</p>
+        <h2>Hai vai trò, một cửa hàng</h2>
+        <div class="grid">
+            <article class="card"><h3>Khách hàng</h3><p>Đăng ký, đăng nhập, duyệt sản phẩm, quản lý giỏ hàng, đặt mua và xem lịch sử đơn của mình.</p></article>
+            <article class="card"><h3>Quản trị viên</h3><p>Đăng nhập riêng, quản lý sản phẩm và theo dõi các đơn hàng cùng thông tin người mua.</p></article>
+        </div>
+        <div class="path">Khách: /login &nbsp;·&nbsp; Admin: /admin/login</div>
+        <aside class="note"><b>Lời dẫn:</b> Hệ thống tách khách hàng và admin. Người đăng ký công khai mặc định là khách. Các trang quản trị được bảo vệ ở phía máy chủ, không chỉ ẩn nút trên giao diện.</aside>
+    </section>
+
+    <section class="slide">
+        <p class="kicker">2.1.1 · Sequence diagram</p>
+        <h2>Đăng ký tài khoản</h2>
+        <div class="diagram wide"><img src="diagrams/01-dang-ky.svg" alt="Sơ đồ tuần tự đăng ký"></div>
+        <p class="explain">Kiểm tra dữ liệu → băm mật khẩu → lưu tài khoản khách → tạo phiên đăng nhập.</p>
+        <aside class="note"><b>Lời dẫn:</b> Khách gửi form đăng ký. Laravel kiểm tra các trường và email trùng lặp. Nếu hợp lệ, mật khẩu được băm trước khi lưu vào bảng users; tài khoản mới có quyền khách hàng. Nếu không hợp lệ, giao diện hiển thị lỗi.</aside>
+    </section>
+
+    <section class="slide">
+        <p class="kicker">2.1.2 · Sequence diagram</p>
+        <h2>Đăng nhập &amp; phân quyền</h2>
+        <div class="diagram wide"><img src="diagrams/02-dang-nhap.svg" alt="Sơ đồ tuần tự đăng nhập"></div>
+        <p class="explain">Laravel xác thực thông tin và xác minh vai trò trước khi cho vào trang tương ứng.</p>
+        <aside class="note"><b>Lời dẫn:</b> Khách và admin có địa chỉ đăng nhập riêng. Laravel kiểm tra mật khẩu và is_admin. Đăng nhập sai hoặc dùng sai loại tài khoản sẽ bị từ chối; các route admin còn được middleware kiểm tra quyền.</aside>
+    </section>
+
+    <section class="slide">
+        <p class="kicker">2.1.3 · Sequence diagram</p>
+        <h2>Quy trình đặt hàng</h2>
+        <div class="diagram wide"><img src="diagrams/03-dat-hang.svg" alt="Sơ đồ tuần tự đặt hàng"></div>
+        <p class="explain">Kiểm tra tồn kho → lưu đơn và chi tiết bằng transaction → cập nhật kho.</p>
+        <aside class="note"><b>Lời dẫn:</b> Khi khách thanh toán, hệ thống kiểm tra lại giỏ và tồn kho. Nếu đủ hàng, một transaction tạo đơn, lưu từng mặt hàng và trừ kho. Nếu thất bại, transaction tránh để lại dữ liệu đơn hàng chưa hoàn chỉnh.</aside>
+    </section>
+
+    <section class="slide">
+        <p class="kicker">2.1.4 · Sequence diagram</p>
+        <h2>Quản trị sản phẩm &amp; đơn mua</h2>
+        <div class="diagram wide"><img src="diagrams/04-quan-tri.svg" alt="Sơ đồ tuần tự quản trị"></div>
+        <p class="explain">Middleware xác nhận quyền admin trước mọi thao tác quản trị.</p>
+        <aside class="note"><b>Lời dẫn:</b> Sau khi admin đăng nhập, có thể quản lý sản phẩm hoặc mở danh sách đơn mua. Trang đơn hiển thị người mua, sản phẩm, địa chỉ, tổng tiền và trạng thái. Khách bị từ chối truy cập.</aside>
+    </section>
+
+    <section class="slide">
+        <p class="kicker">2.2 · PERT chart</p>
+        <h2>Kế hoạch &amp; đường găng</h2>
+        <div class="diagram wide"><img src="diagrams/05-pert.svg" alt="Biểu đồ PERT"></div>
+        <div class="path">Đường găng: A → B → D → E → F → G → H · 15 ngày ước tính</div>
+        <aside class="note"><b>Lời dẫn:</b> PERT mô tả thứ tự phụ thuộc giữa các công việc. Đường màu đỏ là chuỗi không có thời gian dự trữ; nếu một việc trên chuỗi trễ, toàn bộ kế hoạch sẽ trễ. Thời lượng trong sơ đồ là ước lượng minh họa, cần đối chiếu Bài nhận thức 3.</aside>
+    </section>
+
+    <section class="slide">
+        <p class="kicker">2.4 · Database</p>
+        <h2>Thiết kế cơ sở dữ liệu</h2>
+        <div class="diagram wide"><img src="diagrams/06-erd.svg" alt="Sơ đồ quan hệ cơ sở dữ liệu"></div>
+        <p class="explain">users · categories · products · orders · order_items</p>
+        <aside class="note"><b>Lời dẫn:</b> Một danh mục có nhiều sản phẩm; một người dùng có thể có nhiều đơn; một đơn có nhiều dòng chi tiết. Chi tiết đơn lưu tên và giá tại thời điểm mua để giữ lịch sử kể cả khi sản phẩm bị xóa.</aside>
+    </section>
+
+    <section class="slide">
+        <p class="kicker">2.3 · Demo &amp; kết quả</p>
+        <h2>Kiểm thử thực tế</h2>
+        <div class="steps">
+            <div class="step"><b>01 · Đăng ký</b><span>Lưu tài khoản khách, xác thực dữ liệu.</span></div>
+            <div class="step"><b>02 · Đăng nhập</b><span>Tách cổng khách và admin.</span></div>
+            <div class="step"><b>03 · Mua hàng</b><span>Giỏ hàng, tồn kho, checkout.</span></div>
+            <div class="step"><b>04 · Quản trị</b><span>CRUD sản phẩm, xem đơn mua.</span></div>
+            <div class="step"><b>05 · Test</b><span>15 bài kiểm thử đã đạt.</span></div>
+        </div>
+        <table>
+            <thead><tr><th>Chức năng demo</th><th>Đường dẫn</th></tr></thead>
+            <tbody>
+                <tr><td>Đăng ký / đăng nhập khách</td><td>/register · /login</td></tr>
+                <tr><td>Cửa hàng / giỏ hàng / thanh toán</td><td>/products · /cart · /checkout</td></tr>
+                <tr><td>Đăng nhập / quản trị admin</td><td>/admin/login · /admin/products</td></tr>
+                <tr><td>Theo dõi đơn mua</td><td>/admin/orders</td></tr>
+            </tbody>
+        </table>
+        <aside class="note"><b>Lời dẫn:</b> Phần demo nên mở website và thực hiện ngắn luồng đăng ký, đăng nhập, đặt hàng; sau đó đăng nhập admin để xem sản phẩm và đơn. Bộ test gần nhất có 15 test đạt. Các ảnh chụp cần lấy trực tiếp từ phiên demo.</aside>
+    </section>
+
+    <section class="slide">
+        <p class="kicker">Kết luận</p>
+        <h1>Xin cảm ơn<span>.</span></h1>
+        <p class="lead">BAO FASHION kết nối trải nghiệm mua sắm với quản lý sản phẩm và đơn hàng trong cùng một hệ thống.</p>
+        <div class="grid">
+            <article class="card"><h3>Khách hàng</h3><p>Mua sắm và theo dõi đơn cá nhân.</p></article>
+            <article class="card"><h3>Admin</h3><p>Quản lý sản phẩm và theo dõi đơn tập trung.</p></article>
+        </div>
+        <aside class="note"><b>Lời kết:</b> Trên đây là phần trình bày dự án BAO FASHION. Em xin cảm ơn thầy cô và các bạn đã lắng nghe, em sẵn sàng trả lời câu hỏi.</aside>
+    </section>
+</main>
+
+<nav class="controls" aria-label="Điều khiển trình chiếu">
+    <button id="prev" type="button" aria-label="Slide trước">← Trước</button>
+    <span id="counter"></span>
+    <button id="next" type="button" aria-label="Slide tiếp">Tiếp →</button>
+    <button id="print" type="button">In / lưu PDF</button>
+</nav>
+<div class="progress" id="progress"></div>
+<script>
+    (() => {
+        const slides = [...document.querySelectorAll(".slide")];
+        const counter = document.getElementById("counter");
+        const progress = document.getElementById("progress");
+        let current = 0;
+
+        function show(index) {
+            current = Math.max(0, Math.min(index, slides.length - 1));
+            slides.forEach((slide, i) => slide.classList.toggle("active", i === current));
+            counter.textContent = `${current + 1} / ${slides.length}`;
+            progress.style.width = `${((current + 1) / slides.length) * 100}%`;
+            document.title = `${current + 1}/${slides.length} — BAO FASHION`;
+        }
+
+        document.getElementById("prev").addEventListener("click", () => show(current - 1));
+        document.getElementById("next").addEventListener("click", () => show(current + 1));
+        document.getElementById("print").addEventListener("click", () => window.print());
+        document.addEventListener("keydown", event => {
+            if (["ArrowRight", "PageDown", " "].includes(event.key)) { event.preventDefault(); show(current + 1); }
+            if (["ArrowLeft", "PageUp"].includes(event.key)) { event.preventDefault(); show(current - 1); }
+            if (event.key === "Home") show(0);
+            if (event.key === "End") show(slides.length - 1);
+        });
+        show(0);
+    })();
+</script>
+</body>
+</html>
